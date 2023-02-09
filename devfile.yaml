@@ -19,12 +19,14 @@ components:
       size: 1G
   - name: backend
     container:
+      memoryLimit: 3Gi
       image: quay.io/agiertli/backend
       env:
         - name: PROFILE
           value: devspaces    
   - name: postgresql
     container:
+      memoryLimit: 3Gi
       image: registry.redhat.io/rhel8/postgresql-10:latest
       endpoints:
         - exposure: internal
